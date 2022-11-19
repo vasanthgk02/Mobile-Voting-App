@@ -38,17 +38,18 @@ app.route("/citizen").post((req, res) => {
     if (err) {
       res.send(err);
     } else {
+      console.log(res);
       res.send(result);
     }
   });
 });
 
 app.route("/party").get((req, res) => {
-  const title = req.params.articleTitle;
   Party.find({}, (err, result) => {
     if (!err) {
       res.send(result);
     } else {
+      console.log(res);
       res.send(err);
     }
   });
