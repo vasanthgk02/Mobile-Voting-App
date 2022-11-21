@@ -3,15 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Header from "../component/Header";
 import { AntDesign } from "@expo/vector-icons";
 import Colors from "../config/Colors";
-
+import DATA from "../config/DATA";
 const VoterDetailsScreen = ({ navigation }) => {
-  const name = "Sharukhan",
-    fatherName = "Amitha Bachan",
-    sex = "MALE",
-    dob = "25/01/2002",
-    address = "Coimbatore - 641014",
-    linkedAadhaarNo = "0987456789374567",
-    voterId = "AXCB234ADA";
+  const voterDetails = DATA.voterDetails;
+
   return (
     <>
       {/* <Header /> */}
@@ -26,13 +21,15 @@ const VoterDetailsScreen = ({ navigation }) => {
           <Text style={styles.heading}>Linked Aadhaar No. </Text>
         </View>
         <View style={styles.right}>
-          <Text style={styles.heading}>{": " + voterId}</Text>
-          <Text style={styles.heading}>{": " + name}</Text>
-          <Text style={styles.heading}>{": " + fatherName}</Text>
-          <Text style={styles.heading}>{": " + sex}</Text>
-          <Text style={styles.heading}>{": " + dob}</Text>
-          <Text style={styles.heading}>{": " + address}</Text>
-          <Text style={styles.heading}>{": " + linkedAadhaarNo}</Text>
+          <Text style={styles.heading}>{": " + voterDetails.voterId}</Text>
+          <Text style={styles.heading}>{": " + voterDetails.name}</Text>
+          <Text style={styles.heading}>{": " + voterDetails.fatherName}</Text>
+          <Text style={styles.heading}>{": " + voterDetails.sex}</Text>
+          <Text style={styles.heading}>{": " + voterDetails.dob}</Text>
+          <Text style={styles.heading}>{": " + voterDetails.address}</Text>
+          <Text style={styles.heading}>
+            {": " + voterDetails.linkedAadhaarNo}
+          </Text>
         </View>
       </View>
 
@@ -51,13 +48,15 @@ const styles = StyleSheet.create({
     marginTop: "20%",
     marginLeft: "5%",
     flexDirection: "row",
+    backgroundColor: Colors.ternary,
   },
   item: {
     flexDirection: "row",
   },
   heading: {
     padding: 5,
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: 600,
   },
   button: {
     backgroundColor: Colors.primary,

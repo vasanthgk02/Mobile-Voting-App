@@ -31,10 +31,7 @@ const VotingScreen = ({ navigation }) => {
         text: "Yes",
         onPress: () => {
           setLoading(true);
-          wait(2000).then(() => {
-            setLoading(false);
-            navigation.navigate("HomeScreen");
-          });
+          wait(2000).then(() => navigation.navigate("HomeScreen"));
         },
       },
     ]);

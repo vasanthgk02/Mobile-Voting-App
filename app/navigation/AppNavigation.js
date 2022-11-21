@@ -12,9 +12,21 @@ const AppNavigation = () => {
     <Stack.Navigator
       screenOptions={{ headerStyle: { backgroundColor: Colors.primary } }}
     >
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="VoterDetailsScreen" component={VoterDetailsScreen} />
-      <Stack.Screen name="VotingScreen" component={VotingScreen} />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ title: "Home" }}
+      />
+      <Stack.Screen
+        name="VoterDetailsScreen"
+        component={VoterDetailsScreen}
+        options={{ title: "Voter Details" }}
+      />
+      <Stack.Screen
+        name="VotingScreen"
+        component={VotingScreen}
+        options={{ title: "Party Details" }}
+      />
     </Stack.Navigator>
   );
 };

@@ -21,4 +21,14 @@ const partyData = [
   },
 ];
 
-export default { partyData };
+const voterDetails = {
+  name: "Sharukhan",
+  fatherName: "Amitha Bachan",
+  sex: "MALE",
+  dob: "25/01/2002",
+  address: "Coimbatore - 641014",
+  linkedAadhaarNo: "0987456789374567",
+  voterId: "AXCB234ADA",
+};
+
+export default { partyData, voterDetails };
