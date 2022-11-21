@@ -5,7 +5,7 @@ import { AntDesign } from "@expo/vector-icons";
 import Colors from "../config/Colors";
 import DATA from "../config/DATA";
 const VoterDetailsScreen = ({ navigation }) => {
-  const voterDetails = DATA.voterDetails;
+  const details = DATA.voterDetails;
 
   return (
     <>
@@ -21,14 +21,14 @@ const VoterDetailsScreen = ({ navigation }) => {
           <Text style={styles.heading}>Linked Aadhaar No. </Text>
         </View>
         <View style={styles.right}>
-          <Text style={styles.heading}>{": " + voterDetails.voterId}</Text>
-          <Text style={styles.heading}>{": " + voterDetails.name}</Text>
-          <Text style={styles.heading}>{": " + voterDetails.fatherName}</Text>
-          <Text style={styles.heading}>{": " + voterDetails.sex}</Text>
-          <Text style={styles.heading}>{": " + voterDetails.dob}</Text>
-          <Text style={styles.heading}>{": " + voterDetails.address}</Text>
+          <Text style={styles.heading}>{": " + details["voterId"]}</Text>
+          <Text style={styles.heading}>{": " + details["name"]}</Text>
+          <Text style={styles.heading}>{": " + details["fatherName"]}</Text>
+          <Text style={styles.heading}>{": " + details["sex"]}</Text>
+          <Text style={styles.heading}>{": " + details["dob"]}</Text>
+          <Text style={styles.heading}>{": " + details["address"]}</Text>
           <Text style={styles.heading}>
-            {": " + voterDetails.linkedAadhaarNo}
+            {": " + details["linkedAadhaarNo"]}
           </Text>
         </View>
       </View>
@@ -45,20 +45,23 @@ const VoterDetailsScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: "20%",
-    marginLeft: "5%",
+    top: "20%",
+    paddingTop: "5%",
+    paddingBottom: "5%",
+    justifyContent: "center",
     flexDirection: "row",
     backgroundColor: Colors.ternary,
+    borderRadius: 10,
   },
   item: {
     flexDirection: "row",
   },
   heading: {
     padding: 5,
-    fontSize: 18,
-    fontWeight: 600,
+    fontSize: 16,
   },
   button: {
+    top: "5%",
     backgroundColor: Colors.primary,
     width: 70,
     height: 70,
